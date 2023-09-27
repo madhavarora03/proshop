@@ -1,0 +1,15 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "eCommerce application built with MERN Stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "Madhav Arora",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
