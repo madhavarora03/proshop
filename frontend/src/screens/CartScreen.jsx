@@ -20,7 +20,7 @@ const CartScreen = () => {
     dispatch(removeFromCart(id))
   }
 
-  const checkoutHandler = () =>{
+  const checkoutHandler = () => {
     navigate('/login?redirect=/shipping')
   }
 
@@ -41,7 +41,7 @@ const CartScreen = () => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/product/${item.id}`}>{item.name}</Link>
+                    <Link to={`/product/${item._id}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
                   <Col md={2}>
