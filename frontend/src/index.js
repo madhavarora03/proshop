@@ -47,7 +47,7 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <PayPalScriptProvider deferLoading={true}>
+    <PayPalScriptProvider deferLoading={false}>
       <RouterProvider router={router} />
     </PayPalScriptProvider>
   </Provider>,
