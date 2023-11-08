@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose'
+import mongoose, { mongo } from 'mongoose';
 
 const orderSchema = mongoose.Schema(
   {
@@ -103,12 +103,13 @@ const orderSchema = mongoose.Schema(
       required: true,
       default: false,
     },
+    deliveredAt: { type: Date },
   },
   {
     timestamps: true,
-  }
-)
+  },
+);
 
-const Order = mongoose.model('Order', orderSchema)
+const Order = mongoose.model('Order', orderSchema);
 
-export default Order
+export default Order;
