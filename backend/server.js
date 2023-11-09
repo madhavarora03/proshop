@@ -34,6 +34,9 @@ app.get('/api/config/paypal', (req, res) =>
 const __dirname = path.resolve();
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 
+app.use(notFound);
+app.use(errorHandler);
+
 if (process.env.NODE_ENV === 'production') {
   // set static folder
   app.use(express.static(path.join(__dirname, 'frontend/build')));
@@ -47,9 +50,6 @@ if (process.env.NODE_ENV === 'production') {
     res.send('API is running...');
   });
 }
-
-app.use(notFound);
-app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server running on port http://localhost:${port}`);
