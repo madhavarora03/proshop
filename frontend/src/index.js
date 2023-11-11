@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { Provider } from 'react-redux';
+import { HelmetProvider } from 'react-helmet-async';
 import store from './store';
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/styles/index.css';
@@ -38,7 +39,10 @@ const router = createBrowserRouter(
       <Route index={true} path="/" element={<HomeScreen />} />
       <Route path="/search/:keyword" element={<HomeScreen />} />
       <Route path="/page/:pageNumber" element={<HomeScreen />} />
-      <Route path="/search/:keyword/page/:pageNumber" element={<HomeScreen />} />
+      <Route
+        path="/search/:keyword/page/:pageNumber"
+        element={<HomeScreen />}
+      />
       <Route path="/product/:id" element={<ProductScreen />} />
       <Route path="/cart" element={<CartScreen />} />
       <Route path="/login" element={<LoginScreen />} />
@@ -69,11 +73,13 @@ const router = createBrowserRouter(
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
-    <PayPalScriptProvider deferLoading={false}>
-      <RouterProvider router={router} />
-    </PayPalScriptProvider>
-  </Provider>,
+  <HelmetProvider>
+    <Provider store={store}>
+      <PayPalScriptProvider deferLoading={false}>
+        <RouterProvider router={router} />
+      </PayPalScriptProvider>
+    </Provider>
+  </HelmetProvider>,
 );
 
 reportWebVitals();
