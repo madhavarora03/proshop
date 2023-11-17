@@ -6404,9 +6404,8 @@ fieldset:disabled .btn {
 
 .carousel-caption {
   position: absolute;
-  right: 15%;
-  bottom: 1.25rem;
-  left: 15%;
+  bottom: 0rem;
+  left: 0;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
   color: #fff;
